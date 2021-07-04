@@ -10,7 +10,9 @@ class UsersController < ApplicationController
         #authenticate the user
         if @user.authenticate(params[:password])
             #log in - create the user's session
-            #redirect to the user's landing page
+            session[:user_id] = @user.id
+            #redirect to the user's show page
+            redirect "users/#{@user.id}"
         else 
             #notify user of invalid credentials
             #redirect to login page
@@ -19,6 +21,10 @@ class UsersController < ApplicationController
 
     get '/signup' do
 
+    end
+
+    get '/users/:id' do
+        "Howdy"
     end
 
 end
