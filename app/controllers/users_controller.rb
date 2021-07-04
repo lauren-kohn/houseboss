@@ -33,7 +33,8 @@ class UsersController < ApplicationController
     end
 
     get '/users/:id' do
-        "Howdy"
+        @user = User.find_by(id: params[:id])
+        erb :'/users/show'
     end
 
 end
