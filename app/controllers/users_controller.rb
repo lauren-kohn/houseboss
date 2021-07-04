@@ -8,8 +8,13 @@ class UsersController < ApplicationController
         #find the user
         @user = User.find_by(email: params[:email])
         #authenticate the user
-        #log in
-        #redirect to the user's landing page
+        if @user.authenticate(params[:password])
+            #log in - create the user's session
+            #redirect to the user's landing page
+        else 
+            #notify user of invalid credentials
+            #redirect to login page
+        end
     end 
 
     get '/signup' do
