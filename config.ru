@@ -7,4 +7,5 @@ end
 use Rack::MethodOverride
 # will allow use of PATCH and DELETE functionality
 
+use UsersController
 run ApplicationController
