@@ -16,6 +16,7 @@ class ApplicationController < Sinatra::Base
   helpers do 
 
     def logged_in?
+      #current_user returns user info or nil; adding double bang changes return to T/F
       !!current_user
     end 
 
