@@ -23,6 +23,15 @@ class UsersController < ApplicationController
         erb :signup
     end
 
+    post '/users' do
+        if params[:name] != "" && params[:email] != "" && params[:password] != ""
+            @user = User.create(params)
+            redirect "/users/#{@user.id}"
+        else
+            
+        end
+    end
+
     get '/users/:id' do
         "Howdy"
     end
