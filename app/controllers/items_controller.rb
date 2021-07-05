@@ -39,6 +39,8 @@ class ItemsController < ApplicationController
     #this route will edit a particular item
     patch '/items/:id' do 
         set_item
+        @item.update(name: params[:name], description: params[:description])
+        redirect "/items/#{@item.id}"
     end
 
     private
