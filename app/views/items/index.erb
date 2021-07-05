@@ -1,1 +1,11 @@
-Show All Items
+<h2>All Items</h2>
+
+<br>
+<h3>
+<ul>
+<% @items.each do |item|%>
+    <li><%= item.name %>: <%= item.description %></li>
+    <br>
+<%end%>
+</ul>
+</h3>
