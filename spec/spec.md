@@ -21,7 +21,10 @@ Specs:
     User accounts are uniquely identified by their email.
 
  Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying
- Ensure that users can't modify content created by other users
+ 
+ X Ensure that users can't modify content created by other users
+    There is logic in the ItemsController routes to verify that the current user is the owner of the item being accessed.
+
  Include user input validations
  BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)
  Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
