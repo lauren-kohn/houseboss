@@ -28,7 +28,11 @@ class ItemsController < ApplicationController
     #show route for item
     get '/items/:id' do 
         set_item
-        erb :'/items/show'
+        if @item.user_id == current_user.id
+            erb :'/items/show'
+        else
+            redirect '/items'
+        end
     end
 
     #this route renders the form to edit an item
