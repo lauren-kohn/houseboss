@@ -26,13 +26,24 @@ class ItemsController < ApplicationController
 
     #show route for item
     get '/items/:id' do 
-        @item = Item.find(params[:id])
+        set_item
         erb :'/items/show'
     end
 
+    #this route renders the form to edit an item
     get '/items/:id/edit' do 
-        @item = Item.find(params[:id])
+        set_item
         erb :'/items/edit'
     end
 
+    #this route will edit a particular item
+    patch '/items/:id' do 
+        set_item
+    end
+
+    private
+
+    def set_item
+        @item = Item.find(params[:id])
+    end 
 end
