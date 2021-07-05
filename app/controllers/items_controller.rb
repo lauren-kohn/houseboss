@@ -6,8 +6,12 @@ class ItemsController < ApplicationController
     end
 
     #post item (allows form response; creates new item with params)
+    post '/items' do 
+    
+    end
 
     #show route for item
+
 
     #index route for all items
 
