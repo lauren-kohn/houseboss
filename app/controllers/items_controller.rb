@@ -23,13 +23,16 @@ class ItemsController < ApplicationController
         @items = Item.all
         erb :'/items/index'
     end
-    
+
     #show route for item
     get '/items/:id' do 
         @item = Item.find(params[:id])
         erb :'/items/show'
     end
 
-    
+    get '/items/:id/edit' do 
+        #@item = Item.find(params[:id])
+        erb :'/items/edit'
+    end
 
 end
