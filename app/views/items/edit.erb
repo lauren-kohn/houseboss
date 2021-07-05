@@ -1,1 +1,19 @@
-Edit Your Item
+<h2>Edit Your Item</h2>
+
+<form action="/items/<%= @item.id %>" method="post">
+    <input="hidden" name="_method" value="patch">
+    <label for="name">Name: </label>
+    <input type="text" name="name" value="<%= @item.name %>">
+
+    <br>
+    <br>
+
+    <label for="description">Description: </label>
+    <input type="text" name="description" value="<%= @item.description %>">
+
+    <br>
+    <br>
+
+    <input type="submit" value="Edit Your Item">
+
+</form>

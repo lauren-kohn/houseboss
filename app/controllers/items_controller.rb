@@ -31,7 +31,7 @@ class ItemsController < ApplicationController
     end
 
     get '/items/:id/edit' do 
-        #@item = Item.find(params[:id])
+        @item = Item.find(params[:id])
         erb :'/items/edit'
     end
 
