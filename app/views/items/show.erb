@@ -8,4 +8,7 @@
 <a href="/items/<%= @item.id %>/edit">Edit Item</a>
 <br>
 <br>
-<a href="">Delete Item</a>
+<form action="/item/<%= @item.id %>" method="post">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete Item">
+</form>
