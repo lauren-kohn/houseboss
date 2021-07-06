@@ -53,8 +53,8 @@ class ItemsController < ApplicationController
     patch '/items/:id' do 
         set_item
         if logged_in?
-            if @item.user == current_user
-                @item.update(name: params[:name], description: params[:description])
+            if @item.user == current_user && params[:name] != "" && params[:description] != ""
+                @item.update(name: params[:name], description: params[:description]) 
                 redirect "/items/#{@item.id}"
             else
                 redirect "/users/#{current_user.id}"
