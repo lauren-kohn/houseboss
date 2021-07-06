@@ -4,9 +4,7 @@
 </h4><%= @item.description %></h4>
 
 <br>
-<br>
 <a href="/items/<%= @item.id %>/edit">Edit Item</a>
-<br>
 <br>
 <form action="/item/<%= @item.id %>" method="post">
     <input type="hidden" name="_method" value="DELETE">
