@@ -19,12 +19,11 @@
     </div>
     <div class="wrapper">
         <% if logged_in? %>
-        <center>
-        <a href="/items">See All Items</a>
-        <a href="/items/new">Create New Item</a>
-        <a href="/logout">Logout</a>
-        </center>
+          <h3><a href="/items/new">Create New Item</a></h3>
+          <h4><a href="/items">See All Items</a></h4>
+          <h4><a href="/logout">Logout</a></h4>
         <% end %>
+        <br>
         <% if flash[:message] %>
           <h3><%= flash[:message] %></h3>
         <% end %>
