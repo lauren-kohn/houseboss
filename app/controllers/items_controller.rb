@@ -14,6 +14,7 @@ class ItemsController < ApplicationController
             @item = Item.create(name: params[:name], description: params[:description], user_id: current_user.id)
             redirect "/items/#{@item.id}"
         else
+            flash[:message] = "Please enter a name and description."
             redirect "/items/new"
         end
     end
@@ -26,11 +27,12 @@ class ItemsController < ApplicationController
     end
 
     #show route for item
-    get '/items/:id' do 
+    get '/items/:id' do
         set_item
         if @item.user_id == current_user.id
             erb :'/items/show'
         else
+            flash[:message] = "You cannot access that item."
             redirect '/items'
         end
     end
@@ -57,7 +59,8 @@ class ItemsController < ApplicationController
                 @item.update(name: params[:name], description: params[:description]) 
                 redirect "/items/#{@item.id}"
             else
-                redirect "/users/#{current_user.id}"
+                flash[:message] = "A name and description are required to update an item."
+                redirect "/items/#{@item.id}/edit"
             end 
         else
             redirect '/'
@@ -77,6 +80,14 @@ class ItemsController < ApplicationController
     private
 
     def set_item
-        @item = Item.find(params[:id])
+        # In testing, I found that putting in an item id that no longer existed led to an error. 
+        # Using .find_by, the nil return for nonexistent ids allows the logic to proceed (as opposed to .find)
+        # Also, don't forget to use a key-value pair for .find_by
+        if Item.find_by(id: params[:id])
+            @item = Item.find(params[:id])
+        else
+            flash[:message] = "This item no longer exists."
+            redirect '/items'
+        end
     end 
 end
