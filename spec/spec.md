@@ -18,15 +18,19 @@ Specs:
     Items belong_to a User.
 
  X Include user accounts with unique login attribute (username or email)
-    User accounts are uniquely identified by their email.
+    User accounts are identified by their email.
 
- Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying
- 
+ X Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying
+    Users can add items, access ones they've created, modify existing items and delete them.
+
  X Ensure that users can't modify content created by other users
     There is logic in the ItemsController routes to verify that the current user is the owner of the item being accessed.
 
- Include user input validations
+ X Include user input validations
+    It is not possible to create a user or item if the fields are empty.
+
  BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)
+ 
  Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
 
 Confirm:
