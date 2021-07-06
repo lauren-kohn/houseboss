@@ -1,12 +1,18 @@
 Must contain:
-    - short description, 
     - install instructions, 
-    - a contributor's guide, and 
-    - license info (https://opensource.org/licenses/MIT)
+    
 
 Welcome to HouseBoss!
 
-Using the HouseBoss app, you'll be able to keep track of all of your household responsibilities - when the maintenance needs to be done, what everyone needs from the store, and exactly who is supposed to be taking out the garbage this week
+Using the HouseBoss app, you'll be able to keep track of all of your household responsibilities - when the HVAC maintenance needs to be done, what everyone needs from the store, or even how to make that special meal.
 
-First, sign up for an account and create your user profile. Keep track of different items by entering, updating or deleting them as needed. 
+First, sign up for an account and create your user profile. Keep track of different items by entering, accessing, modifying or deleting them as needed. 
+
+Contributing
+Bug reports and pull requests are welcome on GitHub at https://github.com/lauren-kohn/houseboss. 
+
+License
+This project is available as open source under the terms of the MIT License (https://opensource.org/licenses/MIT).
+
+Copyright 2021 lauren-kohn
 
