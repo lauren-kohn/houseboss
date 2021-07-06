@@ -15,6 +15,7 @@ class UsersController < ApplicationController
             redirect "users/#{@user.id}"
         else 
             #notify user of invalid credentials
+            flash[:message] = "Your email and/or password was incorrect. Please sign up or try again."
             #redirect to login page
             redirect '/login'
         end
@@ -30,6 +31,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id #log in the new user
             redirect "/users/#{@user.id}"
         else
+            flash[:message] = "Please complete all fields and try again."
             redirect '/signup'
         end
     end
@@ -41,6 +43,7 @@ class UsersController < ApplicationController
 
     get '/logout' do
         session.clear
+        flash[:message] = "Thanks for using HouseBoss!"
         redirect '/'
     end
 
