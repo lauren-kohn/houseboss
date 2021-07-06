@@ -64,6 +64,16 @@ class ItemsController < ApplicationController
         end
     end
 
+    delete '/item/:id' do 
+        set_item
+        if @item.user == current_user
+            @item.destroy
+            redirect '/items'
+        else
+            redirect '/'
+        end
+    end
+
     private
 
     def set_item
